@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body{
+            background: violet;
+            width: auto;
+            height: auto;
+            background: linear-gradient(to top,rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%),url(1.jpg);
+        }
+       @import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+        .Calculator{
+            margin-top: 100px;
+           
+
+            padding: 10px;
+            border-radius: 1em ;
+            height: 400px;
+            width: 500px;
+         
+            background-color: #bebb08;
+            box-shadow: rgba(0,0,0,.19) 0px 10px 20px,rgba(0,0,0,0.23) 0px 6px 6px; 
+        }
+        .display-box{
+            font-family:"Orbitron", sans-serif;
+            background-color: #dcdbe1;
+            border: solid black 2px;
+            color: black;
+            border-radius: 5px;
+            font-size: 30px;
+            width: 370px;
+            height: 65%;
+        }
+        #btn1{
+            background-color: #fb0066;
+            width: 100%;
+            height: 70%;
+            border-radius: 5px;
+            border: solid black 2px;
+            text-align: center;
+            outline: none;
+        }
+        #btn3{
+            background-color: #00defb;
+            color: white;
+            font-size: 33px;
+            border: solid black 2px;
+            width: 100px;
+            height: 70%;
+            border-radius: 5px;
+            outline: none;
+            text-align: center;
+        }
+        #btn3:active{
+            background-color: #79fb00;
+        }
+        #btn1:active{
+            background-color: yellow;
+        }
+       #btn{
+
+            font-family: sans-serif;
+            background-color:#64278f;
+            color: white;
+            border: solid black 0.5px;
+            width: 100%;
+            height: 70%;
+            border-radius: 5px;
+            outline: none;
+            text-align: center;
+        }
+        #btn:active{
+            background-color:hotpink;
+            -webkit-box-shadow:inset 0px 0px 5px #c1c1c1;
+            -moz-box-shadow:inset 0px 0px 5px white;
+            box-shadow: inset 0px 0px 5px white;
+        }
+
+        h1{
+            color: rgb(12, 188, 241);
+            font-size: 44px;
+            white-space: 0.5px;
+            font-family:  sans-serif;
+            text-align: center;
+            transition: 1s ease-in-out;
+        }
+        h1:hover{
+            color: white;
+        }
+        #pra{
+            float: right;
+            color: #79fb00;
+           transform: none;
+           transition: 0.4s ease-in-out;
+
+        }
+        #pra:hover{
+            color: #fb0066;
+           
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Calculator</h1>
+    <table class="Calculator">
+        <tr>
+            <td colspan="3">
+                <input type="text" class="display-box" id="result" disabled>
+            </td>
+            <td> 
+                <input type="button" value="c" onclick="clearScreen()" id="btn1">
+            </td>
+            
+        </tr>
+        <tr>
+            <td><button value="1" onclick="display('1')" id="btn">1</button></td>
+            <td><button onclick="display('2')"id="btn">2</button></td>
+            <td><button onclick="display('3')"id="btn">3</button></td>
+            <td><button onclick="display('/')"id="btn3">/</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display('4')"id="btn">4</button></td>
+            <td><button onclick="display('5')"id="btn">5</button></td>
+            <td><button onclick="display('6')"id="btn">6</button></td>
+            <td><button onclick="display('-')"id="btn3">-</td>
+        </tr>
+        <tr>
+            <td><button onclick="display('7')"id="btn">7</button></td>
+            <td><button  onclick="display('8')"id="btn">8</td>
+            <td><button onclick="display('9')"id="btn">9</button></td>
+            <td><button  onclick="display('+')"id="btn3">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="display('.')"id="btn">.</button></td>
+            <td><button onclick="display('0')"id="btn">0</button></td>
+            <td><button onclick="calculate()" id="btn1">=</button></td>
+            <td><button onclick="display('*')"id="btn3">*</td>
+        </tr>
+    </table>
+    <p id="pra">By Prathab</p>
+    
+</body>
+<script>
+    function clearScreen(){
+        document.getElementById('result').value='';
+
+    }
+    function display(value){
+        document.getElementById("result").value +=value;
+    }
+    function calculate(){
+        var p=document.getElementById('result').value;
+        var q= eval(p);
+        document.getElementById('result').value =q;
+    }
+</script>
+</html>
